@@ -1,14 +1,97 @@
 /* ==========================================================================
+Variables
+========================================================================== */
+html {
+	--border:					2px solid #ff63c1;
+	--color-black: 				#000;
+	--color-gold: 				#ffd700;
+	--color-gold-dark: 			#c7a600;
+	--color-gold-light: 		#ffff52;
+	--color-gray: 				#606060;
+	--color-gray-dark: 			#333;
+	--color-gray-light: 		#e0e0e0;
+	--color-pink-dark: 			#c60064;
+	--color-pink-light: 		#ff63c1;
+	--color-pink: 				#ff1891;
+	--color-green-dark: 		#006200;
+	--color-green-light: 		#56c23e;
+	--color-green: 				#129100;
+	--font-weight-black: 		black;
+	--font-family-sans-serif: 	'Alegreya', sans-serif;
+	--font-family-serif: 		'Playfair Display', serif;
+	--text-shadow:				1px 1px #ff63c1;
+}
+
+
+
+/* ==========================================================================
 Typography
 ========================================================================== */
 
 html {
-	align-content: center;
-	color: #333;
+	color: var(--color-gray-dark);
 	margin: auto;
 }
+
+body {
+	font-family: var(--font-family-sans-serif);
+}
+
 a {
-	color: #129100;
+	color: var(--color-pink);
+}
+li {
+	font-family: var(--font-family-sans-serif);
+}
+
+.logo {
+	font-weight: var(--font-weight-black);
+	font-size: 3rem;
+}
+
+h1, h2, h3, h4, h5, h6, .logo{
+	font-family: var(--font-family-serif);
+}
+
+ h1 {
+ 	color: var(--color-black);
+ 	padding-left: 2rem;
+ 	text-align: center;
+ 	text-shadow: var(--text-shadow);
+ }
+ 
+ h2 {
+ 	background-color: var(--color-black);
+ 	border-top: var(--border);
+ 	color: var(--color-gold);
+ 	padding: .5rem;
+ }
+
+h3 { 	
+	background-color: var(--color-black);
+ 	color: var(--color-gold-light);
+ 	padding: .25rem;
+ 	text-align: center;
+ }
+
+/* ==========================================================================
+Links
+========================================================================== */
+
+a:visited {
+	text-decoration: line-through;
+}
+
+a:hover {
+	color: var(--color-gold);
+}
+
+a:focus {
+	color: white;
+}
+
+a:active {
+	color: var(--color-gold-dark);
 }
 
 /* ==========================================================================
@@ -16,28 +99,31 @@ Header Component
 ========================================================================== */
 
 header {
-	background-color: #000;
+	background-color: var(--color-black);
+	display: inline-flex;
 	padding: 2rem;
 }
+
 a {
-	color: #ff63c1;
+	color: var(--color-pink-light);
 	display: inline-block;
 	list-style: none;
 	text-decoration: none;
-	padding: 2rem;
-	flex-wrap: wrap;
-	vertical-align: center;
+	padding: .5rem;
 }
+
 ul {
 	display: inline-flex;
 	padding-left: 0;
+	flex-wrap: wrap;
+	vertical-align: center;
 }
+
 li {
 	list-style-type: none;
-	text-align: right;
 }
+
 .logo {
-	font-size: 3rem;
 	padding-left: 0;
 	text-align: left;
 }
@@ -47,16 +133,17 @@ Footer Component
 ========================================================================== */
 
 footer {
-	background-color: #ff1891;
+	background-color: var(--color-pink);
 	border: 0;
-	color: #e0e0e0;
-	align-content: center;
+	color: var(--color-gray-light);
 	font-size: .5rem;
 	margin: 0;
 	padding: .5rem;
+	text-align: center;
 }
+
 footer a {
-	color: #ffff52;
+	color: var(--color-gold-light);
 	font-size: 1rem;
 	padding-bottom: 0;
 	padding-top: 0;
@@ -66,20 +153,20 @@ footer a {
 Main Component
 ========================================================================== */
  body {
- 	align-content: center;
  	margin: auto;
+ 	max-width: 35rem;
  }
+
 figure {
- 	display: inline-flex;
- 	align-content: center;
+	align-content: center;
+	display: inline-block;
+	margin: 0;
+ 	text-align: center;
  }
- svg {
+
+ svg { 	
  	height: 20rem;
  	width: 10rem;
  }
- h1 {
- 	padding-left: 2rem;
- }
- h2, h3 {
- 	text-align: center;
- }
+
+
