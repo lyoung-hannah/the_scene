@@ -19,6 +19,10 @@ html {
 	--font-weight-black: 		black;
 	--font-family-sans-serif: 	'Alegreya', sans-serif;
 	--font-family-serif: 		'Playfair Display', serif;
+	--ratio:					1.5;
+	--size-large:				calc(1rem * var(--ratio) );
+	--size-medium:				calc(var(--size-one) * var(--ratio) );
+	--size-small:				calc(var(--size-two) * var(--ratio) );
 	--text-shadow:				1px 1px #ff63c1;
 }
 
@@ -30,11 +34,23 @@ Typography
 
 html {
 	color: var(--color-gray-dark);
-	margin: auto;
+	line-height: 1.4;
+	margin: auto;	
+}
+
+@media (min-width: 600px) {
+
+	html {
+		--ratio: 1.6;
+		font-size: 19px;
+	}
+}
 }
 
 body {
 	font-family: var(--font-family-sans-serif);
+	max-width: 35rem;
+	margin: 1rem auto;
 }
 
 a {
@@ -44,7 +60,7 @@ li {
 	font-family: var(--font-family-sans-serif);
 }
 
-.logo {
+ .logo {
 	font-weight: var(--font-weight-black);
 	font-size: 3rem;
 }
@@ -55,6 +71,7 @@ h1, h2, h3, h4, h5, h6, .logo{
 
  h1 {
  	color: var(--color-black);
+ 	font-size: var(--size-large);
  	padding-left: 2rem;
  	text-align: center;
  	text-shadow: var(--text-shadow);
@@ -64,13 +81,15 @@ h1, h2, h3, h4, h5, h6, .logo{
  	background-color: var(--color-black);
  	border-top: var(--border);
  	color: var(--color-gold);
+ 	font-size: var(--size-medium);
  	padding: .5rem;
  }
 
 h3 { 	
 	background-color: var(--color-black);
  	color: var(--color-gold-light);
- 	padding: .25rem;
+ 	font-size: 1.5rem;
+ 	padding: var(--size-small);
  	text-align: center;
  }
 
@@ -150,7 +169,7 @@ footer a {
 }
 
 /* ==========================================================================
-Main Component
+Body Component
 ========================================================================== */
  body {
  	margin: auto;
