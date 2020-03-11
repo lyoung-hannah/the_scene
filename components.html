@@ -102,6 +102,8 @@
 					</div>
 				</details>
 			</figure>
+		</section>
+		<section>
 
 			<h3>Modal Dialog</h3>
 			<figure>
@@ -116,10 +118,85 @@
 						</div>
 					</dialog>
 			</figure>
+		</section>
+		<section>
+
+			<h3>Form Inputs</h3>
+			<figure>
+
+				<h4>Text</h4>
+				<form>
+					<label for="name">Standard</label>
+					<input type="text" id="name" name="name" placeholder="Your Name">
+
+					<label for="disabled">Disabled</label>
+					<input type="text" id="name" name="name" disabled value="A Name" class="disabled">
+
+					<label for="error">Error</label>
+					<input type="text" id="name" name="name" class="error" placeholder="Wrong Name!">
+
+				</form>
+			</figure>
+			<figure>
+
+				<h4>Text Area</h4>
+				<form>
+					<label for="message">Message</label>
+						<p class="microcopy">Limit message to under 150 words</p>
+						<textarea id="message" name="message" placeholder="So Excited to attend your wedding!" ></textarea>
+
+					<label for="disabled">Message - Disabled</label>
+						<p class="microcopy">Limit message to under 150 words</p>
+						<textarea id="message" name="message" placeholder="No messages right now, thanks!" disabled value="disabled-message" class="disabled"></textarea>
+
+					<label for="error">Message - Error</label>
+						<p class="microcopy">Limit message to under 150 words</p>
+						<textarea id="message" name="message" placeholder="Oh no! Something went wrong!" class="error"></textarea>
+				</form>
+			</figure>
+			<figure>
+
+				<h4>Select</h4>
+				<form>
+					<label for="meal-choice">Meal Choice</label>
+					<select id="meal-choice" name="meal">
+						<option disabled selected hidden>Choose one</option>
+						<option>Blackened Fish and Asperagus</option>
+						<option>Steak and Potatoes</option>
+						<option>Kale Salad with Figs</option>
+						<option>PB&J Sandwhich</option>
+					</select>
+
+					<label for="disabled">Meal Choice</label>
+					<select id="meal-choice" name="meal" disabled class="disabled">
+						<option disabled selected hidden>Choose one</option>
+						<option>Blackened Fish and Asperagus</option>
+						<option>Steak and Potatoes</option>
+						<option>Kale Salad with Figs</option>
+						<option>PB&J Sandwhich</option>
+					</select>
+
+					<label for="error">Meal Choice</label>
+					<p class="error">Please select a dish!</p>
+					<select id="meal-choice" name="meal" class="error">
+						<option disabled selected hidden>Choose one</option>
+						<option>Blackened Fish and Asperagus</option>
+						<option>Steak and Potatoes</option>
+						<option>Kale Salad with Figs</option>
+						<option>PB&J Sandwhich</option>
+					</select>
+				</form>
+			</figure>
+			<figure>
+				<h4>Submit</h4>
+				<input type="submit" value="Submit This Form">
+			</figure>
+		</section>
+
 	</main>
 	<footer>
 		<p>Created by <strong>Hannah Young</strong></p>
-				<p class="about"> Hannah is a graphic and ux designer based out of Austin, TXShe focuses primarily on social and environmental advocacy design.</p>
+				<p class="about"> Hannah is a graphic and ux designer based out of Austin, TX. She focuses primarily on social and environmental advocacy design.</p>
 		<nav>
 			<ul>
 				<li><a href="http://wwww.google.com">Linkedin</a></li>

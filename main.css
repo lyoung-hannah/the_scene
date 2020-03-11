@@ -17,7 +17,7 @@ html {
 	--color-green-dark: 		#006200;
 	--color-green-light: 		#56c23e;
 	--color-green: 				#129100;
-	--box-shadow-gray: 			3px 3px 4px var(--color-gray-dark);
+	--box-shadow-gray: 			3px 3px 4px var(--color-gray);
 	--box-shadow-pink: 			3px 3px 6px var(--color-pink-dark);
 	--font-family-primary: 		'Alegreya', sans-serif;
 	--font-family-secondary: 	'Playfair Display', serif;
@@ -460,5 +460,100 @@ dialog::backdrop {
  	text-shadow: 1.5px 1.5px 2px var(--color-pink);
  }
 
+/* ==========================================================================
+Form Component
+========================================================================== */
+
+form {
+	border: var(--border);
+	border-radius: var(--border-radius);
+	padding: 2rem calc((100% - 20rem) / 2);
+}
+
+label, input, textarea, select, .microcopy  {
+	display: block;
+	margin: auto;
+	padding-top: 1rem;
+}
+
+select:focus, input:focus, textarea:focus {
+	outline: none;
+}
+
+select, input, textarea {
+	font-size: var(--size-small);
+	padding: .25rem;
+	max-width: 20rem;
+	width: 100%;
+}
+
+label {
+	color: var(--color-pink-dark);
+}
+
+textarea {
+	min-height: 5rem;
+}
+
+.microcopy {
+	font-size: var(--size-xsm);
+	color: var(--color-gray);
+	padding-top: 0;
+}
+
+input, textarea, select {
+	background-color: rgba(255, 99, 193, 0.1);
+}
+
+[disabled value="Your Name"] {
+	color: var(--color-gray);
+}
+
+label, [type="submit"] {
+	margin-top: 1rem;
+}
+
+.disabled {
+	background-color: transparent;
+	min-height: 1rem;
+}
+
+.error {
+	border-color: var(--color-pink-dark);
+	color: var(--color-pink-dark);
+}
+
+p.error {
+	font-size: var(--size-xsm);
+}
+
+[type="submit"], button {
+	background-color: transparent;
+	border: var(--border);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow-gray);
+	color: var(--color-pink);
+	display: inline-block;
+	font-size: var(--size-small);
+	max-width: 40%;
+	padding: .5rem .5rem;
+}
+
+[type="submit"]:visited, button:visited {
+	background-color: transparent;
+	color: var(--color-);
+}
+
+[type="submit"]:hover , button:hover, [type="submit"]:focus, button:focus {
+	background-color: var(--color-pink-light);
+	color: var(--color-gold-light);
+	outline: none;
+	transition: all .25s;
+}
+
+[type="submit"]:active, button:active {
+	background-color: var(--color-pink-light);
+	color: var(--color-gold-light);
+}
 
 
