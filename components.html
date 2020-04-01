@@ -10,7 +10,7 @@
 <body>
 	<header>
 		<a href="index.html" class="logo">The Scene</a>
-		<nav>
+		<nav class="primary-nav">
 			<ul>
 				<li><a href="index.html">Home</a></li>
 				<li><a href="style.html">Style</a></li>
@@ -20,9 +20,9 @@
 		</nav>
 	</header>
 	<main>
-		<section>
-			
+
 			<h1>The Scene Components</h1>
+		<section>
 
 			<h3>Link Buttons</h3>
 			<figure>
@@ -50,55 +50,55 @@
 				<h4>More Info</h4>
 				<details>
 					<summary>Event Packages</summary>
-					<div class="accordion-summary">
+					<div class="accordion">
 
 						<h5>Weddings</h5> 
-							<p>We cater to an assortment of wedding styles and work tirelessly to make sure your special day is perfect</p>
+						<p>We cater to an assortment of wedding styles and work tirelessly to make sure your special day is perfect</p>
 					</div>
 					<div class="accordion-summary">
 
 						<h5>Birthday Parties</h5> 
-							<p>From your Daughter's Paw Patrol themed 3rd birthday party to your Grandfather's 90th, we've got you covered! </p>
+						<p>From your Daughter's Paw Patrol themed 3rd birthday party to your Grandfather's 90th, we've got you covered! </p>
 					</div>
-					<div class="accordion-summary">
+					<div class="accordion">
 
 						<h5>Office Parties</h5> 
-							<p>Give your employees a holiday party they won't soon forget with a range of themes.</p>
+						<p>Give your employees a holiday party they won't soon forget with a range of themes.</p>
 					</div>
 				</details>
 				<details>
 					<summary>Pricing</summary>
-					<div class="accordion-summary">
+					<div class="accordion">
 
 						<h5>The Light $450</h5> 
-							<p>We do the research, and put together some options, you make the follow through</p>
+						<p>We do the research, and put together some options, you make the follow through</p>
 					</div>
-					<div class="accordion-summary">
+					<div class="accordion">
 
 						<h5>The Fun $750</h5> 
-							<p>We organize all the details, minus catering</p>
+						<p>We organize all the details, minus catering</p>
 					</div>
-					<div class="accordion-summary">
+					<div class="accordion">
 
 						<h5>The Grandiose $1500</h5>
-							<p>Sit back in luxury and let us take care of everything</p>
+						<p>Sit back in luxury and let us take care of everything</p>
 					</div>
 				</details>
 				<details>
 					<summary>Contact</summary>
-					<div class="accordion-summary">
+					<div class="accordion">
 
 						<h5>Location</h5> 
-							<p>We're here! Find us at 183 and Anderson</p>
+						<p>We're here! Find us at 183 and Anderson</p>
 					</div>
-					<div class="accordion-summary">
+					<div class="accordion">
 						<h5>Phone number</h5> 
-							<p>512.459.2222</p>
+						<p>512.459.2222</p>
 					</div>
-					<div class="accordion-summary">
+					<div class="accordion">
 
 						<h5>Email</h5> 
-							<p>Happening@gmail.com</p>
+						<p>Happening@gmail.com</p>
 					</div>
 				</details>
 			</figure>
@@ -108,15 +108,15 @@
 			<h3>Modal Dialog</h3>
 			<figure>
 				<button id="modal" type="button">Invitation Example</button>
-					<dialog id="modal-demo">
-						<div class="inner-modal">
+				<dialog id="modal-demo">
+					<div class="inner-modal">
 
-						<h1 class="modal-h1">You're invited!</h1>
+					<h3 class="modal-heading">You're invited!</h3>
 						
-						<h3 class="centered-text">To the Party of the Decade</h3>
-							<p> Ring in the new year at our luxury suite where you can dance the night away to a live Swing Band. Apps and drinks procided by our friends at Renegade Brewery</p>
-						</div>
-					</dialog>
+					<h3 class="modal-subhead">To the Party of the Decade</h3>
+					<p> Ring in the new year at our luxury suite where you can dance the night away to a live Swing Band. Apps and drinks proceded by our friends at Renegade Brewery</p>
+					</div>
+				</dialog>
 			</figure>
 		</section>
 		<section>
@@ -192,11 +192,52 @@
 				<input type="submit" value="Submit This Form">
 			</figure>
 		</section>
-
+		<section>
+			
+			<h3>Navigation</h3>
+			<figure>
+				<h4>Primary Navigation</h4>
+				<div class="primary-nav">
+					<nav>
+						<ul>
+							<li class="active-page"><a href="#">About</a></li>
+							<li><a href="#">Packages</a></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</figure>
+			<figure>
+				<h4>Secondary Navigation</h4>
+				<nav class="secondary-nav">
+					<ul>
+						<li><a href="#">Color Themes</a></li>
+						<ul class="nav-sublist-item">
+							<li><a href="#">Primary</a></li>
+							<li><a href="#">Secondary</a></li>
+							<li><a href="#">Accent</a></li>
+						</ul>
+						<li><a href="#">Forms</a></li>
+						<li><a href="#">Buttons</a></li>
+						<li><a href="#">Typefaces</a></li>
+							<ul class="nav-sublist-item">
+								<li><a href="#">Display</a></li>
+								<li><a href="#">Primary</a></li>
+							</ul>
+						<li><a href="#">Navigation</a></li>
+						<ul class="nav-sublist-item">
+							<li><a href="#">Main Navigation</a></li>
+							<li><a href="#">Secondary Navigation</a></li>
+						</ul>
+					</ul>
+					</nav>
+			</figure>
+		</section>
 	</main>
 	<footer>
 		<p>Created by <strong>Hannah Young</strong></p>
-				<p class="about"> Hannah is a graphic and ux designer based out of Austin, TX. She focuses primarily on social and environmental advocacy design.</p>
+		<p class="about"> Hannah is a graphic and ux designer based out of Austin, TX. She focuses primarily on social and environmental advocacy design.</p>
 		<nav>
 			<ul>
 				<li><a href="http://wwww.google.com">Linkedin</a></li>
