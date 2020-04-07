@@ -3,6 +3,7 @@ Variables
 ========================================================================== */
 html {
 	--border:					2px outset #ff63c1;
+	--border-thick:				10px outset #ff63c1;
 	--border-radius: 			.5rem 2rem 2rem 2rem;
 	--color-black: 				#000;
 	--color-gold: 				#ffd700;
@@ -19,11 +20,14 @@ html {
 	--color-green: 				#129100;
 	--box-shadow-gray: 			3px 3px 4px var(--color-gray);
 	--box-shadow-pink: 			3px 3px 6px var(--color-pink-dark);
+	--box-shadow-pink-light:	4px 4px 4px var(--color-pink-light);
 	--font-family-primary: 		'Alegreya', sans-serif;
 	--font-family-secondary: 	'Playfair Display', serif;
 	--pink-opacity-low:			rgba(255, 99, 193, 0.1);
-	--pink-opacity-medium:		rgba(255, 99, 193, 0.5);
-	--ratio:					1.5;
+	--pink-opacity-medium:		rgba(255, 99, 193, 0.3);
+	--pink-opacity-high:		rgba(255, 99, 193, 0.5);
+	--gold-opacity:				rgba(100, 100, 32, 0.5);
+	--ratio:					1.3;
 	--size-tiny:				.5rem;
 	--size-xsm:					.8rem;
 	--size-small:				calc(1rem / var(--ratio) );
@@ -32,6 +36,7 @@ html {
 	--size-xl:					calc(var(--size-large) * var(--ratio) );
 	--size-xxl:					calc(var(--size-xl) * var(--ratio) );
 	--text-shadow-pink:			1px 1px #ff63c1;
+	--text-shadow-gold: 		1px 1px #ffd700;
 }
 
 
@@ -61,6 +66,7 @@ html {
 
 @media (min-width: 600px) {
 	html {
+		font-size: 1.5;
 		line-height: 1.3;
 	}
 }
@@ -221,8 +227,10 @@ Header Component
 
 header {
 	background-color: var(--color-black);
+	box-shadow: var(--box-shadow-pink-light);
 	padding: 1rem;
 	text-align: center;
+	z-index: 10;
 }
 
 header a { 
@@ -239,7 +247,7 @@ header li {
 	padding: 1rem;
 }
 
-@media (min-width: 752px) {
+@media (min-width: 790px) {
 	header {
 		align-items: center;
 		background-color: var(--color-black);
@@ -340,6 +348,11 @@ Link Button Component
 	padding: .5rem 1.5rem;
 }
 
+.link-button, .link-button-light, .link-button-hero, .link-button-hero-light, .link-button-secondary {
+	text-align: center;
+	vertical-align: middle;
+}
+
 .link-button:visited {
 	background-color: var(--color-pink-light);
 }
@@ -355,8 +368,10 @@ Link Button Component
 
 .link-button-light {
 	background-color: transparent;
-	color: var(--color-pink-dark);
+	border: var(--border);
+	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow-pink);
+	color: var(--color-pink-dark);
 }
 
 .link-button-hero {
@@ -644,7 +659,7 @@ Navigation Component
 	padding: 1rem;
 }
 
-@media (min-width: 752px) {
+@media (min-width: 790px) {
 	.primary-nav {
 		align-items: center;
 		background-color: var(--color-black);
@@ -704,6 +719,128 @@ Navigation Component
 	color: var(--green-dark);
 }
 
+/* ==========================================================================
+Navigation Component
+========================================================================== */
 
+.notification {
+	align-items: center;
+	border: var(--border);
+	border-radius: var(--border-radius);
+	color: white;
+	display: flex;
+	justify-content: left;
+	margin: 1rem;
+	max-width: 40rem;
+}
+
+.notification img {
+	height: 4rem;
+	padding: 2rem;
+	width: 4rem;
+}
+
+.notification h4 {
+	color: var(--color-gold-light);
+	margin-bottom: 0;
+}
+
+.notification .link-button-light {
+	margin-bottom: 2rem;
+	margin-top: 1rem;
+	max-width: 4rem;
+}
+
+.notification .notification-erro {
+	align-items: center;
+}
+
+.notification-success, .notification-error, .notification-warning, .notification-neutral {
+	border-left: var(--border);
+	padding: 1rem;
+}
+
+.notification-success {
+	background-color: var(--color-green);
+}
+
+.notification .success-face {
+	background-color: var(--color-green-dark);
+}
+
+.notification-warning {
+	background-color: var(--color-gold);
+}
+
+.notification .warning-face {
+	background-color: var(--color-gold-dark);
+
+}
+
+.notification-error h4, .notification-warning h4 {
+	color: var(--color-pink-dark);
+}
+
+.notification-error p, .notification-warning p {
+	color: var(--color-black);
+}
+
+.notification .error-face {
+	background-color: var(--color-pink-dark);
+}
+
+.notification-neutral {
+	background-color: var(--color-pink-light);
+}
+
+/* ==========================================================================
+Hero Block
+========================================================================== */
+
+.hero {
+	background-attachment: fixed;
+	background-image: url(images/sparklers.jpg);
+	background-position: center 15rem;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-bottom: var(--border-thick);
+	display: flex;
+	flex-direction: column;
+	height: 90vh;
+	justify-content: center;
+	width: 100vw;
+}
+
+.hero h1 {
+	color: var(--color-pink-light);
+	margin: 0;
+	text-align: left;
+	text-shadow: none;
+	text-transform: none;
+}
+
+.hero-text p {
+	color: var(--color-gold);
+}
+
+.hero-text {
+	/*background-color: var(--gold-opacity);*/
+	border: var(--border);
+	margin-left: 2rem;
+	max-width: 30%;
+	padding: 1rem 5rem;
+}
+
+@media (max-width: 580px) {
+	.hero-text {
+		font-size: var(--size-medium);
+		max-width: 70%;
+		padding: 1rem;
+	}
+	.hero {
+		background-image: url(images/sparklers_small.png);
+		height: 100vh;
+	}
+}
 
 
