@@ -90,20 +90,7 @@ h1, h2, h3, h4, h5, h6, .logo{
  	text-transform: uppercase;
  }
 
- @media (max-width: 400px) {
- 	.lead {
- 		font-size: 12px;
- 	}
- 	h1 {
- 		font-size: 40px;
- 	}
- 	p {
- 		font-size: 20px;
- 	}
- 	.tertiary-dark, .tertiary-light, .about {
- 		font-size: 15px;
- 	}
- }
+
  
  h2 {
  	border-top: var(--border);
@@ -293,6 +280,12 @@ footer li {
 @media (min-width: 400px) {
 	footer li {
 		padding: .25rem;
+	}
+}
+
+@media (min-width: 915px) {
+	footer .about {
+		text-align: center;
 	}
 }
 /* ==========================================================================
@@ -547,6 +540,7 @@ label, input, textarea, select, .microcopy  {
 
 select:focus, input:focus, textarea:focus {
 	outline: none;
+	color: white;
 }
 
 select, input, textarea {
@@ -583,17 +577,14 @@ input, textarea, select {
 	background-color: rgba(255, 99, 193, 0.1);
 }
 
-[disabled value="Your Name"] {
+[disabled] {
+	background-color: transparent;
 	color: var(--color-gray);
+	min-height: 1rem;
 }
 
 label, [type="submit"] {
 	margin-top: 1rem;
-}
-
-.disabled {
-	background-color: transparent;
-	min-height: 1rem;
 }
 
 .error {
@@ -729,46 +720,50 @@ Navigation Component
 	border-radius: var(--border-radius);
 	color: white;
 	display: flex;
-	justify-content: left;
 	margin: 1rem;
 	max-width: 40rem;
+	overflow: hidden;
 }
 
 .notification img {
 	height: 4rem;
-	padding: 2rem;
+	padding: 1rem;
 	width: 4rem;
 }
 
 .notification h4 {
 	color: var(--color-gold-light);
-	margin-bottom: 0;
+	margin: 0;
 }
 
 .notification .link-button-light {
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	margin-top: 1rem;
 	max-width: 4rem;
 }
 
-.notification .notification-erro {
-	align-items: center;
-}
 
-.notification-success, .notification-error, .notification-warning, .notification-neutral {
+
+.notification-success div, .notification-error div, .notification-warning div, .notification-neutral div {
+	align-self: stretch;
 	border-left: var(--border);
 	padding: 1rem;
+	width: 100%;
 }
 
-.notification-success {
+.notification-success div {
 	background-color: var(--color-green);
 }
 
-.notification .success-face {
+.notification-success {
 	background-color: var(--color-green-dark);
 }
 
 .notification-warning {
+	background-color: var(--color-gold-dark)
+}
+
+.notification-warning div {
 	background-color: var(--color-gold);
 }
 
@@ -785,11 +780,15 @@ Navigation Component
 	color: var(--color-black);
 }
 
-.notification .error-face {
+.notification-error {
 	background-color: var(--color-pink-dark);
 }
 
-.notification-neutral {
+.notification-error div {
+	background-color: white;
+}
+
+.notification-neutral div {
 	background-color: var(--color-pink-light);
 }
 
@@ -798,21 +797,20 @@ Hero Block
 ========================================================================== */
 
 .hero {
-	background-attachment: fixed;
-	background-image: url(images/sparklers.jpg);
-	background-position: center 15rem;
+	background-image: url(images/sparklers_small.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	border-bottom: var(--border-thick);
 	display: flex;
 	flex-direction: column;
-	height: 90vh;
+	height: 100vh;
 	justify-content: center;
 	width: 100vw;
 }
 
 .hero h1 {
 	color: var(--color-pink-light);
+	font-size: var(--size-large);
 	margin: 0;
 	text-align: left;
 	text-shadow: none;
@@ -828,18 +826,23 @@ Hero Block
 	border: var(--border);
 	margin-left: 2rem;
 	max-width: 30%;
-	padding: 1rem 5rem;
+	padding: 1rem 4rem;
 }
 
-@media (max-width: 580px) {
+.desktop-img {
+	max-width: 100%;
+}
+
+@media (min-width: 580px) {
 	.hero-text {
-		font-size: var(--size-medium);
-		max-width: 70%;
-		padding: 1rem;
+		font-size: var(--size-large);
+	}
+
+	.hero h1 {
+		font-size: var(--size-xxl);
 	}
 	.hero {
-		background-image: url(images/sparklers_small.png);
-		height: 100vh;
+		background-image: url(images/sparklers.jpg);
 	}
 }
 
