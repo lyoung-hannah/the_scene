@@ -254,7 +254,7 @@ footer {
 	background: linear-gradient(to bottom, #ff63c1, #c60064);
 	color: var(--color-gray-light);
 	font-size: var(--size-xsm);
-	padding: .5rem;
+	padding: 1rem;
 	text-align: center;
 }
 
@@ -273,7 +273,7 @@ footer li {
 }
 
 .about {
-	padding: 1rem;
+	padding: 1.5rem;
 	text-align: left;
 }
 
@@ -369,7 +369,10 @@ Link Button Component
 
 .link-button-hero {
 	background-color: var(--color-pink);
+	border: var(--border);
+	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow-gray);
+	color: var(--color-gold-light);
 	margin: 1rem;
 	padding: 2rem;
 }
@@ -696,10 +699,15 @@ Navigation Component
 	text-decoration: underline;
 }
 
-.nav-sublist-item li {
+.secondary-nav li ul {
+	display: none;
 	font-size: var(--size-small);
 	list-style-image: url(images/arrow.svg);
 	text-decoration: none;
+}
+
+.secondary-nav li:hover ul{
+	display: block;
 }
 
 .secondary-nav ul {
@@ -719,16 +727,27 @@ Navigation Component
 	border: var(--border);
 	border-radius: var(--border-radius);
 	color: white;
-	display: flex;
 	margin: 1rem;
 	max-width: 40rem;
 	overflow: hidden;
 }
 
 .notification img {
-	height: 4rem;
-	padding: 1rem;
-	width: 4rem;
+	height: 3rem;
+	padding: 0;
+	width: 3rem;
+}
+
+@media (min-width: 575px) {
+	.notification {
+		display: flex;
+	}
+
+	.notification img {
+		height: 4rem;
+		padding: 1rem;
+		width: 4rem;
+	}
 }
 
 .notification h4 {
@@ -736,13 +755,11 @@ Navigation Component
 	margin: 0;
 }
 
-.notification .link-button-light {
-	margin-bottom: 1rem;
-	margin-top: 1rem;
+.notification-error .link-button-light {
+	display: inline-block;
+	margin: 1rem 0;
 	max-width: 4rem;
 }
-
-
 
 .notification-success div, .notification-error div, .notification-warning div, .notification-neutral div {
 	align-self: stretch;
@@ -846,4 +863,139 @@ Hero Block
 	}
 }
 
+/* ==========================================================================
+Information Cards
+========================================================================== */
 
+.article-card {
+	background-color: var(--pink-opacity-low);
+	max-width: 30rem;
+}
+
+.article-card img {
+	border: var(--border);
+	display: block;
+	max-width: 100%;
+}
+
+.article-card div {
+	padding: 1rem
+}
+
+.article-card h2, .profile-card h2 {
+	margin-top: 0;
+}
+
+.article-card a:focus, .article-card a:hover {
+	color: var(--color-green-dark);
+}
+
+.article-card .tertiary-dark {
+	display: flex;
+	justify-content: space-between;
+}
+
+.profile-card {
+	border: var(--border);
+	border-radius: var(--border-radius);
+	display: block;
+	max-width: 20rem;
+	padding: 1rem;
+	position: relative;
+}
+
+.profile-card img {
+	display: block;
+	height: 6rem;
+	width: 6rem;
+}
+
+.profile-card p {
+	margin: 0;
+	padding-left: 1rem;
+}
+
+.profile-card h2 {
+	margin-bottom: .5rem;
+}
+
+.call {
+	background-color: var(--pink-opacity-high);
+	border-radius: var(--border-radius);
+	/*display: none;*/
+	position: absolute;
+	text-align: center;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.profile-card a:hover .call {
+	/*display: block;*/
+	visibility: visible;
+}
+
+.profile-card a:hover .call h4 {
+	color: white;
+	font-size: 80px;
+	text-shadow: var(--text-shadow-gold);
+}
+
+@media (min-width: 545px) {
+	
+	.profile-card {
+		align-items: flex-start;
+		display: flex;
+		justify-content: center;
+		padding: 2rem;
+	}
+
+	.profile-card img {
+		border-radius: var(--border-radius);
+	}
+
+	.profile-card h2 {
+		margin-bottom: 1rem;
+	}
+}
+
+
+.action-card { 
+	background-image: url(images/glitter2.jpg);
+	display: flex;
+	max-width: 27rem;
+	min-height: 35rem;
+	background-repeat: no-repeat;
+ }
+
+.action-card div {
+	padding: 1rem;
+	position: relative;
+}
+
+.action-card h1 {
+	margin: 0;
+	text-align: left;
+}
+
+.action-card p {
+	background-color: var(--pink-opacity-high);
+	padding-left: 1rem;
+}
+
+@media (min-width: 645px) {
+
+	.action-card p {
+	color: white;
+	padding-left: 0;
+	}
+}
+
+.action-card .link-button-hero {
+	bottom: 2rem;
+	font-size: var(--size-large);
+	position: absolute;
+	right: 1rem;
+}
