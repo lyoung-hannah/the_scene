@@ -27,7 +27,7 @@ html {
 	--pink-opacity-medium:		rgba(255, 99, 193, 0.3);
 	--pink-opacity-high:		rgba(255, 99, 193, 0.5);
 	--gold-opacity:				rgba(100, 100, 32, 0.5);
-	--ratio:					1.3;
+	--ratio:					1.2;
 	--size-tiny:				.5rem;
 	--size-xsm:					.8rem;
 	--size-small:				calc(1rem / var(--ratio) );
@@ -55,18 +55,22 @@ html {
 @media (min-width: 400px) {
 
 	html {
-		font-size: 19px;
 		--ratio: 1.3;
+
+		/*font-size: 19px;*/
 	}
+
 	blockquote {
-	max-width: 15rem;
-	padding: 1rem;
+		max-width: 15rem;
+		padding: 1rem;
 	}
 }
 
 @media (min-width: 600px) {
 	html {
-		font-size: 1.5;
+		--ratio: 1.4;
+
+		/*font-size: 20px;*/
 		line-height: 1.3;
 	}
 }
@@ -932,14 +936,15 @@ Information Cards
 	visibility: hidden;
 }
 
-.profile-card a:hover .call {
+.profile-card:hover .call {
 	/*display: block;*/
 	visibility: visible;
 }
 
-.profile-card a:hover .call h4 {
+.profile-card:hover .call h4 {
 	color: white;
 	font-size: 80px;
+	margin-top: 0;
 	text-shadow: var(--text-shadow-gold);
 }
 
@@ -982,7 +987,6 @@ Information Cards
 
 .action-card p {
 	background-color: var(--pink-opacity-high);
-	padding-left: 1rem;
 }
 
 @media (min-width: 645px) {
