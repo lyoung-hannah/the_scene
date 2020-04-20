@@ -35,6 +35,7 @@ html {
 	--size-large:				calc(var(--size-medium) * var(--ratio) );
 	--size-xl:					calc(var(--size-large) * var(--ratio) );
 	--size-xxl:					calc(var(--size-xl) * var(--ratio) );
+	--size-xxxl:				calc(var(--size-xxl) * var(--ratio) );
 	--text-shadow-pink:			1px 1px #ff63c1;
 	--text-shadow-gold: 		1px 1px #ffd700;
 }
@@ -222,6 +223,11 @@ header {
 	padding: 1rem;
 	text-align: center;
 	z-index: 10;
+}
+
+header img {
+	height: 100%;
+	width:	1.5rem;
 }
 
 header a { 
@@ -873,17 +879,24 @@ Information Cards
 
 .article-card {
 	background-color: var(--pink-opacity-low);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	max-width: 30rem;
+	box-shadow: var(--box-shadow-pink);
 }
 
 .article-card img {
-	border: var(--border);
+	border-left: var(--border);
+	border-top: var(--border);
 	display: block;
+	justify-items: center;
 	max-width: 100%;
 }
 
 .article-card div {
-	padding: 1rem
+	padding: 1rem;
+	align-items: end;
 }
 
 .article-card h2, .profile-card h2 {
@@ -968,11 +981,14 @@ Information Cards
 
 
 .action-card { 
-	background-image: url(images/glitter2.jpg);
+	background-image: url(images/glitter.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: var(--border);
 	display: flex;
 	max-width: 27rem;
 	min-height: 35rem;
-	background-repeat: no-repeat;
+	margin: 1rem;
  }
 
 .action-card div {
@@ -987,6 +1003,8 @@ Information Cards
 
 .action-card p {
 	background-color: var(--pink-opacity-high);
+	margin-top: 1rem;
+	padding-left: 1rem;
 }
 
 @media (min-width: 645px) {
@@ -1002,4 +1020,109 @@ Information Cards
 	font-size: var(--size-large);
 	position: absolute;
 	right: 1rem;
+}
+
+/* ==========================================================================
+Grid Component
+========================================================================== */
+
+.card-grid {
+	background-color: var(--color-grey-light);
+}
+
+.article-card {
+	margin: 1rem;
+}
+
+@media (min-width: 575px) {
+
+	.article-cards {
+		display: grid;
+		grid-gap: 1rem;
+		grid-template-columns: 1fr 1fr;
+		justify-items: center;
+	}
+	
+	.article-card:first-child {
+		grid-column: span 2;
+		max-width: 100%;
+	}
+}
+
+@media (min-width: 950px) {
+
+	.article-cards {
+		grid-gap: 2rem;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	.article-card:first-child {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		max-height: 100%;
+	}
+
+	.article-card:nth-child(2) .tertiary-dark {
+		background-color: var(--color-green-light);
+	}
+}
+
+.card-callouts {
+	background-color: white;
+}
+
+.action-card:nth-child(3) {
+	background-image: url(images/brunch.jpg);
+	max-width: 100%;
+}
+
+.action-card:nth-child(2) {
+	background-image: url(images/brick_table.jpg);
+	max-width: 100%;
+}
+
+@media (min-width: 700px){
+
+	.action-cards {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-items: center;
+	}
+
+	.action-card:first-child {
+		grid-row: span 2;
+		height: 100vh;
+		max-width: 100%;
+	}
+
+	.action-card:first-child p {
+		font-size: var(--size-large);
+		padding-top: 1rem;
+	}
+
+	.action-card:nth-child(2) .link-button-hero, .action-card:nth-child(3) .link-button-hero {
+		font-size: var(--size-medium);
+		padding: 1rem;
+	}
+
+	.action-card:nth-child(2) h1, .action-card:nth-child(3) h1 {
+		font-size: var(--size-xl);
+	}
+
+	.action-card:nth-child(2) p, .action-card:nth-child(3) p {
+		margin-top: 3rem;
+		padding-left: 2rem;
+	}
+}
+
+@media (min-width: 1040px) {
+
+	.action-card:first-child h1 {
+		font-size: var(--size-xxxl);
+	}
+
+	.action-card:first-child p {
+		font-size: var(--size-xl);
+		padding: 2rem;
+	}
 }
