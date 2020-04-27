@@ -27,6 +27,7 @@ html {
 	--pink-opacity-medium:		rgba(255, 99, 193, 0.3);
 	--pink-opacity-high:		rgba(255, 99, 193, 0.5);
 	--gold-opacity:				rgba(100, 100, 32, 0.5);
+	--black-opacity:			rgba(0, 0, 0, 0.65);
 	--ratio:					1.2;
 	--size-tiny:				.5rem;
 	--size-xsm:					.8rem;
@@ -158,7 +159,7 @@ ol, ul {
 
 blockquote {
 	border: var(--border);
-	box-shadow: 3px 3px 6px var(--color-green-dark);
+	box-shadow: 3px 3px 6px var(--color-pink-dark);
 	color: var(--color-pink-dark);
 	padding: .5rem;
 }
@@ -304,15 +305,24 @@ Page Layout
 
  body {
  	background-color: var(--pink-opacity-low);
- 	margin: 0;
+ 	margin: auto;
  }
 
  main {
  	background-color: #fff;
  	margin: auto;
- 	max-width: 35rem;
  	padding: 2rem;
  }
+
+.text-based-page {
+	max-width: 35rem;
+}
+
+.solo-img {
+	border: var(--border);
+	border-radius: var(--border-radius);
+	max-width: 100%;
+}
 
 /* ==========================================================================
 Examples
@@ -336,6 +346,10 @@ figure {
 .swatch-text {
  	font-size: var(--size-xsm);
  }
+
+ .desktop-img {
+	max-width: 100%;
+}
 
 /* ==========================================================================
 Link Button Component
@@ -430,6 +444,10 @@ details {
 	border: var(--border);
 	border-radius: var(--border-radius);
 	margin: .5rem;
+}
+
+details p {
+	padding: 1rem;
 }
 
 summary {
@@ -541,6 +559,10 @@ form {
 	padding: 2rem calc((100% - 20rem) / 2);
 }
 
+form h3 {
+	text-align: center;
+}
+
 label, .microcopy, .error {
 	padding-left: 2rem;
 }
@@ -553,7 +575,7 @@ label, input, textarea, select, .microcopy  {
 
 select:focus, input:focus, textarea:focus {
 	outline: none;
-	color: white;
+	color: var(--color-green-dark);
 }
 
 select, input, textarea {
@@ -729,7 +751,7 @@ Navigation Component
 }
 
 /* ==========================================================================
-Navigation Component
+Notification Component
 ========================================================================== */
 
 .notification {
@@ -794,7 +816,7 @@ Navigation Component
 	background-color: var(--color-gold);
 }
 
-.notification .warning-face {
+.notification-warning img {
 	background-color: var(--color-gold-dark);
 
 }
@@ -832,7 +854,6 @@ Hero Block
 	flex-direction: column;
 	height: 100vh;
 	justify-content: center;
-	width: 100vw;
 }
 
 .hero h1 {
@@ -845,24 +866,22 @@ Hero Block
 }
 
 .hero-text p {
-	color: var(--color-gold);
+	color: var(--color-gold-light);
 }
 
 .hero-text {
-	/*background-color: var(--gold-opacity);*/
+	background-color: var(--black-opacity);
 	border: var(--border);
 	margin-left: 2rem;
-	max-width: 30%;
-	padding: 1rem 4rem;
-}
-
-.desktop-img {
-	max-width: 100%;
+	max-width: 40%;
+	padding: 1rem 1rem;
 }
 
 @media (min-width: 580px) {
 	.hero-text {
 		font-size: var(--size-large);
+		max-width: 70%;
+		padding-left: 2rem;
 	}
 
 	.hero h1 {
@@ -873,8 +892,16 @@ Hero Block
 	}
 }
 
+@media (min-width: 970px) {
+
+	.hero-text {
+		max-width: 40%;
+	}
+
+}
+
 /* ==========================================================================
-Information Cards
+Article Cards
 ========================================================================== */
 
 .article-card {
@@ -911,6 +938,10 @@ Information Cards
 	display: flex;
 	justify-content: space-between;
 }
+
+/* ==========================================================================
+Profile Cards
+========================================================================== */
 
 .profile-card {
 	border: var(--border);
@@ -956,7 +987,7 @@ Information Cards
 
 .profile-card:hover .call h4 {
 	color: white;
-	font-size: 80px;
+	font-size: 5rem;
 	margin-top: 0;
 	text-shadow: var(--text-shadow-gold);
 }
@@ -979,6 +1010,9 @@ Information Cards
 	}
 }
 
+/* ==========================================================================
+Action Cards
+========================================================================== */
 
 .action-card { 
 	background-image: url(images/glitter.jpg);
@@ -989,11 +1023,16 @@ Information Cards
 	max-width: 27rem;
 	min-height: 35rem;
 	margin: 1rem;
- }
-
-.action-card div {
 	padding: 1rem;
 	position: relative;
+ }
+
+ .action-card-dark {
+	color: white;
+}
+
+.action-card div {
+
 }
 
 .action-card h1 {
@@ -1011,13 +1050,17 @@ Information Cards
 
 	.action-card p {
 	color: white;
-	padding-left: 0;
+	}
+
+	.action-card {
+		padding: 1rem;
 	}
 }
 
 .action-card .link-button-hero {
 	bottom: 2rem;
 	font-size: var(--size-large);
+	padding: 1rem;
 	position: absolute;
 	right: 1rem;
 }
